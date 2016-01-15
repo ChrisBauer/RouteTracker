@@ -1,0 +1,14 @@
+{
+  "name": "route-tracker-server",
+  "version": "0.0.1",
+  "description": "server for the Route Tracker app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Bauer",
+  "license": "MIT",
+  "dependencies": {
+    "rethinkdb": "^2.2.1"
+  }
+}

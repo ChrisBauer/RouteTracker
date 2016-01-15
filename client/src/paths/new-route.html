@@ -1,0 +1,13 @@
+<template>
+    <div class="btn" class.bind="!isStarted ? 'btn-primary' : 'btn-disabled'" click.delegate="startRoute()">Start Route</div>
+    <div class="btn" class.bind="isStarted && !isFinished ? 'btn-primary' : (isFinished ? 'btn-disabled' : 'btn-default')" click.delegate="addWaypoint()">Add Waypoint</div>
+    <div class="btn" class.bind="isStarted && !isFinished ? 'btn-primary' : (isFinished ? 'btn-disabled' : 'btn-default')" click.delegate="finishRoute()">Finish Route</div>
+    
+    <ul>
+        <li repeat.for="wayPoint of route.wayPoints">
+            ${wayPoint.tstamp}: (${wayPoint.lat}, ${wayPoint.lng})
+        </li>
+    </ul>
+    
+    <div id="routeMap"></div>
+</template>
