@@ -18,7 +18,7 @@ export class Route {
                             tstamp: position.timestamp,
                             lat: position.coords.latitude,
                             lng: position.coords.longitude,
-                            index: self.wayPoints.length
+                            seq: self.wayPoints.length
                         });
                         resolve(self.wayPoints[self.wayPoints.length - 1]);
                     },
