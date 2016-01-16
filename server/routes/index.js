@@ -21,7 +21,7 @@ var db = r.db('RouteTracker').table('routes');
 router.get('/route', function (req, res, next) {
     db.run(conn, function (err, cursor) {
         if (err) {
-            res.status(500).json({error: e});
+            res.status(500).json({error: err});
         }
         cursor.toArray(function (e, result) {
             if (e) {
