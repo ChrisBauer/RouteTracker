@@ -1,22 +1,28 @@
 import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
+import {Router} from 'aurelia-router';
 
-@inject(HttpClient)
+@inject(HttpClient, Router)
 export class List {
     
-    constructor (http) {
+    constructor (http, router) {
         http.configure(config => {
         config
             .useStandardConfiguration()
-            .withBaseUrl('http://jsonplaceholder.typicode.com/');
+            .withBaseUrl('http://localhost:3000/route');
         });
         
         this.http = http;
+        this.r = router;
     }
     
     activate () {
-        return this.http.fetch('posts/1')
+        return this.http.fetch('')
             .then(response => response.json())
-            .then(response => this.response = response);
+            .then(response => this.routes = response);
+    }
+    
+    openRoute(route) {
+        this.r.navigate('route-detail/' + route.id);
     }
 }

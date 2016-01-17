@@ -1,4 +1,20 @@
 <template>
-    <h3>${response.title}</h3>
-    <p>${response.body}</p>
+    <require from="modules/date-format"></require>
+    <h3>Previous Routes</h3>
+    <table>
+        <thead>
+            <th>Start</th>
+            <th>Finish</th>
+            <th>Waypoints</th>
+            <th>Tags</th>
+        </thead>
+        <tbody>
+            <tr repeat.for="route of routes" click.delegate="openRoute(route)">
+                <td>${route.start | dateFormat:'M/D/YYYY'}</td>
+                <td>${route.end | dateFormat:'M/D/YYYY'}</td>
+                <td>${route.waypoints.length}</td>
+                <td>${route.tags.join(', ')}</td>
+            </tr>
+        </tbody>
+    </table>
 </template>

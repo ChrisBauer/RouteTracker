@@ -1,0 +1,10 @@
+<template>
+    <require from="modules/date-format"></require>
+    <h3>Route Detail</h3>
+    <div class="flex">
+        <div>Start: ${route.start | dateFormat: 'M/D/YYYY h:mm'}</div>
+        <div></div>
+        <div>End: ${route.end | dateFormat: 'M/D/YYYY h:mm'}</div>
+    </div>
+    <div ref="detailMap" id="detailMap"></div>
+</template>
