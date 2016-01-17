@@ -1,13 +1,14 @@
 import {HttpClient} from 'aurelia-fetch-client';
 import {inject} from 'aurelia-framework';
 import Helper from 'modules/helpers';
+import ServerConfig from 'modules/server-config';
 
 @inject(HttpClient)
 export class RouteDetail {
 
     constructor(http, element) {
         this.http = http.configure(config => {
-            config.withBaseUrl('http://localhost:3000/route');
+            config.withBaseUrl(ServerConfig.baseUrl);
         });
     }
 

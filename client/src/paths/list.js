@@ -1,6 +1,7 @@
 import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 import {Router} from 'aurelia-router';
+import ServerConfig from 'modules/server-config';
 
 @inject(HttpClient, Router)
 export class List {
@@ -9,7 +10,7 @@ export class List {
         http.configure(config => {
         config
             .useStandardConfiguration()
-            .withBaseUrl('http://localhost:3000/route');
+            .withBaseUrl(ServerConfig.baseUrl);
         });
         
         this.http = http;
